@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //thay đổi kích thước phần tử
+            $("#btn1").click(function(){
+                $("#box").animate({height: "300px"});
+            });
+            //ẩn phần tử
+            $("#hide").click(function(){
+                $("p").hide();
+            });
+            //hiện lại phẩn tử
+            $("#show").click(function(){
+                $("p").show();
+            });
+            //thay đổi ẩn và hiện của phần tử
+            $("#btn2").click(function(){
+                $("#box").toggle();
+            });
+            //thay đổi độ mờ của phẩn tử
+            $(".btn3").click(function(){
+                $("#box").fadeOut();
+            });
+            $(".btn4").click(function(){
+                $("#box").fadeIn();
+            });
+            //cuộn các phần tử lên xuống
+            $(".btn5").click(function(){
+                $("#box1").slideUp();
+            });
+            $(".btn6").click(function(){
+                $("#box1").slideDown();
+            });
+            // trả về nội dung cho phần tử có thể dùng thay thế nội dung phẩn tử
+            $(".btn7").click(function(){
+                $("#box2").html("Hello <b>world!</b>");
+            });
+            //chèn nội dung đươc chọn vào cuối phần tử được chỉ định
+            $("#btn8").click(function(){
+                $("ol").append("<li>Appended item</li>");
+            });
+            //chèn nội dung được chọn vào đầu phần tử
+            $("#btn9").click(function(){
+                $("ol").prepend("<li>Prepended item</li>");
+            });
+            //.css để chèn css vào phần tử
+            //
+            $("#b").on("click", function(){
+                $("#c").css("background-color", "pink");
+            });
+            $("#a").click(function(){
+                $("#b").off("click");
+            });
+
+            })
+    </script>
+</head>
+<body>
+<p>If you click on the "Hide" button, I will disappear.</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<br>
+
+<button id="btn2">Toggle between hide() and show()</button>
+<br>
+<button id="btn1">Animate height</button>
+<div id="box" style="background:#98bf21;height:100px;width:100px;margin:6px;"></div>
+<button class="btn3">Fade out</button>
+<button class="btn4">Fade in</button>
+<br>
+<div id="box1" style="background:#98bf21;height:100px;width:100px;margin:6px;"></div>
+<button class="btn5">Slide up</button>
+<button class="btn6">Slide down</button>
+<br>
+<div id="box2" style="background:#98bf21;height:100px;width:100px;margin:6px;"></div>
+<button class="btn7">Change content of all p elements</button>
+<br>
+<ol>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+</ol>
+<button id="btn8">Append Last</button>
+<button id="btn9">Append First</button>
+<br>
+<p id="c">Click this paragraph to change its background color.</p>
+<button id="a">Remove the click event handler</button>
+<button id="b">Remove the click event handler</button>
+</body>
+</html>
